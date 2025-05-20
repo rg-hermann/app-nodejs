@@ -2,6 +2,7 @@ name: Node.js CI Pipeline
 
 permissions:
   actions: read
+  contents: read
   security-events: write
 
 on:
