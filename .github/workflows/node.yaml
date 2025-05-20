@@ -1,5 +1,9 @@
 name: Node.js CI Pipeline
 
+permissions:
+  actions: read
+  security-events: write
+
 on:
   workflow_dispatch:
   push:
