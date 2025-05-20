@@ -1,0 +1,20 @@
+{
+  "name": "app-nodejs",
+  "version": "1.0.0",
+  "description": "Node.js 22 app following best practices",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "mkdir -p dist && cp src/*.js dist/ && rm -f dist/*.test.js",
+    "test": "node --test",
+    "start": "node dist/index.js",
+    "dev": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {}
+}
