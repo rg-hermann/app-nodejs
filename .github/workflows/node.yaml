@@ -1,25 +1,20 @@
-# name: Node.js CI Pipeline
+name: CI/CD Node.js App Service Deployment
 
-# permissions:
-#   actions: read
-#   contents: read
-#   security-events: write
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
-# on:
-#   workflow_dispatch:
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
-
-# jobs:
-#   node-ci:
-#     uses: rg-hermann/workflow-templates/.github/workflows/ci-node.yaml@feature/node-ci
-#     with:
-#       node-version: '22'
-#       install-command: 'npm ci'
-#       build-command: 'npm run build'
-#       test-command: 'npm test'
-#       run-npm-audit: true
-#       run-codeql: true
-#       run-dependency-review: true
+jobs:
+  call-node-app-service:
+    uses: rg-hermann/workflow-templates/.github/workflows/node-app-service.yaml@main
+    with:
+      node-version: '22.x'
+      app-name: 'node'
+      slot-name: 'Production'
+      build-command: 'npm run build --if-present'
+      test-command: 'npm run test --if-present'
+    #   client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
+    #   tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
+    #   subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
