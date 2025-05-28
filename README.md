@@ -20,3 +20,6 @@ Repo app nodejs
 ## API
 
 - `GET /` — retorna `{ "message": "Hello, Node.js 22 API!" }`
+
+
+![alt text](image.png)
