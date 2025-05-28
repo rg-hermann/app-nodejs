@@ -12,7 +12,7 @@ on:
 
 jobs:
   call-node-app-service:
-    uses: rg-hermann/workflow-templates/.github/workflows/node-app-service.yaml@main
+    uses: rg-hermann/workflow-templates/.github/workflows/node-app-service.yaml@feat/node  #main
     with:
       node-version: '22.x'
       app-name: 'node'
