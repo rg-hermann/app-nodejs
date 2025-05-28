@@ -1,5 +1,9 @@
 name: CI/CD Node.js App Service Deployment
 
+permissions:
+  id-token: write
+  contents: read
+
 on:
   push:
     branches:
